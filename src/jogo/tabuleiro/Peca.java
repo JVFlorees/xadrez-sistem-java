@@ -7,8 +7,8 @@ public class Peca {
 	private Tabuleiro tabuleiro;
 	
 	
-	public Peca(Tabuleiro tabbuleiro) {	
-		this.tabuleiro = tabbuleiro;
+	public Peca(Tabuleiro tabuleiro) {	
+		this.tabuleiro = tabuleiro;
 		posicao = null;
 	}
 

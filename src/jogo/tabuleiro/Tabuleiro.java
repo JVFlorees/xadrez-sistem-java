@@ -36,4 +36,10 @@ public class Tabuleiro {
 	public Peca peca(posicao posicao) {
 		return pecas[posicao.getLinha()][posicao.getColuna()];
 	}
+	
+	public void lugarPeca(Peca peca, jogo.tabuleiro.posicao posicao) {
+		pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+		peca.posicao = posicao;
+	}
 }
+
