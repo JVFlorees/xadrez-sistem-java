@@ -1,5 +1,7 @@
 package jogo.tabuleiro;
 
+import xadrez.PosicaoXadrez;
+
 public class Tabuleiro {
 
 	private int linhas;
@@ -45,6 +47,19 @@ public class Tabuleiro {
 		peca.posicao = posicao;
 	}
 	
+	public Peca RemovePeca(posicao origem) {
+		if (!posicaoExistentes(origem)) {
+			throw new TabuleiroException("Não ha essa posição no tabuleiro");
+		}
+		if (peca(origem) == null) {
+			return null;
+		}
+		Peca aux = peca(origem);
+		aux.posicao = null;
+		pecas[origem.getLinha()][origem.getColuna()] = null;
+		return aux;
+	}
+	
 	private boolean posicaoExistentes(int linha, int coluna) {
 		return linha >= 0 && linha < linhas && coluna >= 0 && coluna < colunas;
 	}
@@ -59,6 +74,7 @@ public class Tabuleiro {
 		}
 		return peca(posicao) != null;
 	}
+	
 	
 	
 	
